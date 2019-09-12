@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chown +x hello
+chmod -R u+x hello
