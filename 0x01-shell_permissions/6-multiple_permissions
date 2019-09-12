@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod 114 hello
+chmod -R ug+x o+r  hello
