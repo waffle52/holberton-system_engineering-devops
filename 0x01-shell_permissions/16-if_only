@@ -1,2 +1,2 @@
 #!/bin/bash
-if [$username == "guillaume"] then chown betty hello fi
+chown --from=guillaume betty hello
