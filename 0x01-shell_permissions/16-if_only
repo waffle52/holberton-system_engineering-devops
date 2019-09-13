@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod u=guillaume betty hello
+if [$username == "guillaume"] then chown betty hello fi
