@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script displays the contents of the current directory in list format
 name=""
-for entry in ./*
+for entry in *;
 do
     name=${entry##*-}
     echo "$name"
