@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script displays "Holberton School" 10 times and hi after the 9th run
+num=1
+while [ $num -lt 11 ]
+do
+    echo "Holberton School"
+    if [ $num -eq 9 ]
+    then
+	echo "hi"
+    fi
+    ((num++))
+done
