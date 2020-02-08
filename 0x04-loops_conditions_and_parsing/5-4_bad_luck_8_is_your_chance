@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script
+# This script prints Holberton School unless num is 4 or 8.
 num=1
 while [ $num -lt 11 ]
 do
