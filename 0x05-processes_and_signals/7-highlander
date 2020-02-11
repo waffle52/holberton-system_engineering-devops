@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script
+trap no SIGTERM
+no() {
+    echo "I am invincible!!!"
+}
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
