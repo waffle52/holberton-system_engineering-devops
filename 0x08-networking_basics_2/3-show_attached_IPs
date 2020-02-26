@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays all active IPv4 IPs on the machine
+ifconfig eth0 | grep -Po 't addr:\K[\d.]+'
+ifconfig lo | grep -Po 't addr:\K[\d.]+'
