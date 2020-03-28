@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script changes the default webpage to the text Hello Holberton
+echo "Hello Holberton" > /var/www/html/index.html
+sudo service apache2 restart
