@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script configures Nginx so that its HTTP response contains a custom header
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=ccrhTmWurvQ permanent;' /etc/nginx/sites-enabled/default
+sudo sed -i "/listen 80 default_server/a add_header X-Served-By \"$HOSTNAME\";" /etc/nginx/nginx.con
+sudo service nginx restart
