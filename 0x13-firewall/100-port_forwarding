@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script port forwards to port 80 from port 8080
+sudo ufw allow 80/tcp
+sudo sed -i '1 i\*nat \n:PREROUTING ACCEPT [0:0] \n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80 \nCOMMIT' /etc/ufw/before.rules
+sudo systemctl restart ufw
