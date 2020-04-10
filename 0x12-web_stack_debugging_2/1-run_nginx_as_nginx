@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script changes nginx to run as user nginx
+useradd nginx
+sudo sed -i 'user nginx;' /etc/nginx/nginx.conf
+sudo sed -i '/listen 8080 default_server;' /etc/nginx/sites-enabled/default
+sudo service nginx restart
