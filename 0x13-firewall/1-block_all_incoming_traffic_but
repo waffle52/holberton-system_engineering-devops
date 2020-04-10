@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script installs ufw and blocks all traffic except on ports 22, 443 and 80
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
