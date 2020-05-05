@@ -12,8 +12,8 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
     r = requests.get(url)
     data = r.json()
-    emp_name = data['name']
-    emp_user = data['username']
+    emp_name = data.get('name')
+    emp_user = data.get('username')
     url_todo = "https://jsonplaceholder.typicode.com/todos"
     r2 = requests.get(url_todo)
     for x in r2.json():
