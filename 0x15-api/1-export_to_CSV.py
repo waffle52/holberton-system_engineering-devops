@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Records all tasks of the employee ID passed to a CSV file """
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == "__main__":
     task_length = 0
