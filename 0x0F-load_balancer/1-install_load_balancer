@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
-# This script
+# This script configures a balance loader with roundrobin algo for this server
+# to connect to two specified servers
 sudo apt-get -y install software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.8
 sudo apt-get update
 sudo apt-get -y install haproxy=1.8.\*
 
-echo "listen http-incoming
-     mode http
-     bind 10.0.0.10:80" | sudo tee -a /etc/haproxy/haproxy.cfg
-echo "balance roundrobin" | sudo tee -a /etc/haproxy/haproxy.cfg
-echo "option httpchk HEAD / HTTP/1.1\r\nHost:\ www
+echo "backend web-backend
+      balance roundrobin" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo "server web1 35.243.156.189:80 check
+    server web2 104.196.36.41:80 check" | sudo tee -a /etc/haproxy/haproxy.cfg
 
-     option forwardfor
-
-       server websrv1 35.243.156.189:80 maxconn 512 check
-    server websrv2 104.196.36.41:80 maxconn 512 check" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo "listen  http-incoming
+    bind *:80
+    stats uri /haproxy?stats
+    default_backend web-backend" | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo systemctl restart haproxy
