@@ -14,7 +14,7 @@ frontend localnodes
         default_backend data
 backend data
         balance roundrobin
-        server 873-web-01 35.229.80.211:80 check
-        server 873-web-02 3.85.226.144:80 check" >> /etc/haproxy/haproxy.cfg
+        server 873-web-01 35.243.156.189:80 check
+        server 873-web-02 104.196.36.41:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
